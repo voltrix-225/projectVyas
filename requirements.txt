@@ -1,0 +1,8 @@
+pylint
+flake8
+bandit
+radon
+tree-sitter
+flask  # Only needed if using a Flask-based GUI
+argparse  # For command-line interface (built into Python, but included for clarity)
+pyinstaller  # Only needed if building an executable
