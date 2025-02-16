@@ -1,5 +1,6 @@
 import os  # Unused import
 import sys  # Unused import
+import subprocess
 
 def badFunctionName():  # Incorrect function name (not snake_case)
     VAR = "Hello"  # Variable name should be lowercase (PEP 8)
@@ -34,3 +35,9 @@ def very_complex_function(x):
 user_input = "os.system('rm -rf /')"  # Security risk: eval injection
 eval(user_input)  # Dangerous function usage
 very_complex_function(29)
+
+API = "ojwfeowifh9ru3urq39ur4u2u-p'jcodewpc"
+
+pwd = "ojwfeowifh9ru3urq39ur4u2u-p'jcodewpc"
+
+subprocess.run()
