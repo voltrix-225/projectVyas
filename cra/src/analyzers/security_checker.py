@@ -41,5 +41,3 @@ def check_subprocess(fp):
     with open(fp, "r", encoding= "utf-8") as file:
         tree = ast.parse(file.read())
     SubprocessAnalyser().visit(tree)
-
-Pwd_checker("C:\\Users\\voltr\\OneDrive\\Python\\projectVyas\\cra\\src\\analyzers\\demo.py")
