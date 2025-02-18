@@ -41,3 +41,11 @@ API = "ojwfeowifh9ru3urq39ur4u2u-p'jcodewpc"
 pwd = "ojwfeowifh9ru3urq39ur4u2u-p'jcodewpc"
 
 subprocess.run()
+
+for i in range(100):
+    for i in range(30):
+        print("hi")
+    print()
+
+def recursion():
+    return recursion()
