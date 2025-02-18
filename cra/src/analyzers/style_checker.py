@@ -43,7 +43,7 @@ class CodeStyleChecker(ast.NodeVisitor):
 
         else:
             print(f"Found {len(self.issues) + 1} styling issues :")
-            for issue in self.issues:
+            for issue  in self.issues:
                 print(f"{issue}")
 
 
@@ -55,7 +55,3 @@ def check_code_style_issues(fp):
         check_code.report_style_issues()
         
 
-
-fp = "C:\\Users\\voltr\\OneDrive\\Python\\projectVyas\\cra\\src\\analyzers\\demo.py"
-
-check_code_style_issues(fp)

@@ -47,5 +47,10 @@ for i in range(100):
         print("hi")
     print()
 
-def recursion():
-    return recursion()
+def fib(n):
+    if n == 1:
+        return 1
+    else:
+        return fib(n) * fib(n-1)
+    
+fib(5)

@@ -24,6 +24,11 @@ class CyclomaticComplexityChecker(ast.NodeVisitor):
         print(f"Encountered Boolean Operation at line number {node.lineno}")
         self.complexity += 1
         self.generic_visit(node)
+        
+    def visit_Try(self, node):
+        print(f"Encountered 'Try Block' at line number {node.lineno}")
+        self.complexity += 1
+        self.generic_visit(node)
 
 
 def calculateCyclomaticComplexity(fp):
@@ -65,6 +70,7 @@ def countNestedLoops(fp):
 class RecursiveComplexityCounter(ast.NodeVisitor):
     def __init__(self):
         self.recursive_functions = set()  #STORES THE FUNCTIONS THAT CALL THEMSELVES
+        self.recfunc_dict = {'name': None, 'calls': 0}
 
     def visit_FunctionDef(self, node):
         function_name = node.name    #GET FUNCTION NAME
@@ -72,9 +78,11 @@ class RecursiveComplexityCounter(ast.NodeVisitor):
         for child in ast.walk(node):
             if isinstance(child, ast.Call) and isinstance(child.func, ast.Name):
                 if child.func.id == function_name:
-                    self.recursive_functions.add(function_name)
+                    self.recfunc_dict['name'] = function_name
+                    self.recfunc_dict['calls'] += 1
 
         self.generic_visit(node)
+
 
 
 def recursionCounter(fp):
@@ -82,10 +90,7 @@ def recursionCounter(fp):
         tree = ast.parse(file.read())
         recursive_complexity = RecursiveComplexityCounter()
         recursive_complexity.visit(tree)
-        return recursive_complexity.recursive_functions   #formatting reqd
+        return recursive_complexity.recfunc_dict['name'], recursive_complexity.recfunc_dict['calls']  
  
 
-fp = "C:\\Users\\voltr\\OneDrive\\Python\\projectVyas\\cra\\src\\analyzers\\demo.py"
-
-print(recursionCounter(fp))
 
