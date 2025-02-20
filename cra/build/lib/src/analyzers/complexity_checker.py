@@ -3,7 +3,7 @@ import ast
 
 class CyclomaticComplexityChecker(ast.NodeVisitor):
     def __init__(self):
-        self.complexity = 0
+        self.complexity = 1
 
     def visit_If(self, node):
         print(f"Encountered 'if' statement at line number {node.lineno}")
