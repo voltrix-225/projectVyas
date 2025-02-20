@@ -1,0 +1,7 @@
+Metadata-Version: 2.2
+Name: cra-analyzer
+Version: 1.0
+Summary: Code analyzer
+Requires-Dist: pylint
+Dynamic: requires-dist
+Dynamic: summary
