@@ -1,4 +1,4 @@
-import subprocess
+
 import ast
 
 class CyclomaticComplexityChecker(ast.NodeVisitor):
