@@ -8,6 +8,7 @@ import os
 
 
 def analyze_file(fp):
+    
     syntax = check_syntax_errors(fp)
     if not syntax:
         exit()
